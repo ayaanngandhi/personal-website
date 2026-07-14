@@ -1,0 +1,9 @@
+[
+  { "name": "Python", "icon": "Code2" },
+  { "name": "TypeScript", "icon": "FileCode2" },
+  { "name": "React", "icon": "Atom" },
+  { "name": "Next.js", "icon": "Hexagon" },
+  { "name": "FastAPI", "icon": "Zap" },
+  { "name": "Gemini API", "icon": "Sparkles" },
+  { "name": "Kotlin", "icon": "Smartphone" }
+]

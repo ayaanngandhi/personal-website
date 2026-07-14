@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Started Programming",
+    "description": "Began learning Python as the first language, diving into the world of code.",
+    "year": "2023"
+  },
+  {
+    "title": "Class 10 CBSE",
+    "description": "Completed Class 10 board examinations under CBSE.",
+    "year": "2026"
+  },
+  {
+    "title": "Built Cellestina",
+    "description": "Created the first full-stack project — an e-commerce store with AI chatbot integration.",
+    "year": "2025"
+  },
+  {
+    "title": "Expanded Tech Stack",
+    "description": "Moved beyond Python into Next.js, TypeScript, and FastAPI for modern full-stack development.",
+    "year": "2025"
+  },
+  {
+    "title": "Built VideoBot, CodeVode, EchoFrame",
+    "description": "Developed multiple projects spanning automation, mobile apps, and real-time systems.",
+    "year": "2026"
+  },
+  {
+    "title": "Launched ayaanngandhi.in",
+    "description": "Deployed the personal portfolio website to showcase projects and skills.",
+    "year": "2026"
+  }
+]
