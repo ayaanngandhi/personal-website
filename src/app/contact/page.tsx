@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { GithubIcon, XIcon } from "@/components/Icons";
+import { GithubIcon, XIcon, InstagramIcon } from "@/components/Icons";
 import site from "@/data/site.json";
 
 const contacts = [
@@ -16,6 +16,12 @@ const contacts = [
     icon: XIcon,
     label: "Twitter / X",
     href: site.twitter,
+    display: "@ayaanngandhi",
+  },
+  {
+    icon: InstagramIcon,
+    label: "Instagram",
+    href: site.instagram,
     display: "@ayaanngandhi",
   },
   {
@@ -55,7 +61,7 @@ export default function ContactPage() {
             href={c.href}
             target={c.href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-lg border border-border bg-surface p-5 transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(34,211,238,0.05)]"
+            className="group flex items-center gap-4 rounded-lg border border-border glass p-5 transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(34,211,238,0.05)]"
           >
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-background text-muted transition-colors group-hover:text-accent">
               <c.icon size={20} />

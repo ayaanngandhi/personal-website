@@ -2,10 +2,15 @@
   {
     "title": "Started Programming",
     "description": "Began learning Python as the first language, diving into the world of code.",
-    "year": "2023"
+    "year": "2022"
   },
   {
-    "title": "Class 10 CBSE",
+    "title": "Getting into AI",
+    "description": "Started learning about LLMs and transformers with the popularity of ChatGPT 3.5",
+    "year": "2022"
+  },
+  {
+    "title": "Made AI projects",
     "description": "Completed Class 10 board examinations under CBSE.",
     "year": "2026"
   },

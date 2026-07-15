@@ -1,5 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
-import { GithubIcon, XIcon } from "@/components/Icons";
+import { GithubIcon, XIcon, InstagramIcon } from "@/components/Icons";
 import site from "@/data/site.json";
 
 export default function Footer() {
@@ -28,6 +28,15 @@ export default function Footer() {
             aria-label="Twitter"
           >
             <XIcon size={16} />
+          </a>
+          <a
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+            aria-label="Instagram"
+          >
+            <InstagramIcon size={16} />
           </a>
           <a
             href={`mailto:${site.email}`}

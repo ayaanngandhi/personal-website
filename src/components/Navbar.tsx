@@ -10,7 +10,6 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -19,10 +18,10 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border glass-strong">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-6">
         <Link href="/" className="font-mono text-sm font-bold tracking-tight">
-          <span className="text-accent">&gt;</span> ayaan
+          <span className="text-accent">&gt;</span> Ayaan
         </Link>
 
         {/* Desktop */}
@@ -66,7 +65,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`rounded-md py-2 text-sm transition-colors hover:bg-surface hover:text-accent ${
+                  className={`rounded-md py-2 text-sm transition-colors hover:bg-white/10 dark:hover:bg-white/5 hover:text-accent ${
                     pathname === link.href ? "text-accent" : "text-muted"
                   }`}
                 >

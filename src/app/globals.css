@@ -1,64 +1,56 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-border: var(--border-color);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: light-dark(#ffffff, #0a0a0a);
+  --color-foreground: light-dark(#0a0a0a, #ededed);
+  --color-surface: light-dark(rgba(255,255,255,0.6), rgba(255,255,255,0.12));
+  --color-surface-hover: light-dark(rgba(255,255,255,0.8), rgba(255,255,255,0.18));
+  --color-border: light-dark(rgba(0,0,0,0.08), rgba(255,255,255,0.10));
+  --color-border-hover: light-dark(rgba(0,0,0,0.15), rgba(255,255,255,0.18));
+  --color-muted: light-dark(#737373, #a3a3a3);
+  --color-accent: #22d3ee;
+  --color-glass: light-dark(rgba(255,255,255,0.45), rgba(255,255,255,0.10));
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --surface: #f5f5f5;
-  --border-color: #e5e5e5;
-  --muted: #737373;
-  --accent: #22d3ee;
+/* Glass base utility */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--color-border);
+  box-shadow: 
+    0 4px 24px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --surface: #171717;
-  --border-color: #262626;
-  --muted: #a3a3a3;
-  --accent: #22d3ee;
+.glass-strong {
+  background: var(--color-surface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--color-border);
+  box-shadow: 
+    0 4px 24px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--color-accent);
   color: #0a0a0a;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
-}
-
-/* Animated gradient for hero */
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

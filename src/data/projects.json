@@ -1,100 +1,100 @@
 [
   {
     "name": "Cellestina",
-    "description": "E-commerce store for bracelets & pendants. Built with Next.js, FastAPI backend, and a Gemini AI chatbot for customer support. Created to help with my mom's business.",
-    "tech": ["Next.js", "FastAPI", "Gemini API", "Tailwind CSS"],
+    "description": "E-commerce store for bracelets & pendants with a Next.js frontend, FastAPI backend, and Gemini AI chatbot which knows everything about the business. Built for my mom's business.",
+    "tech": ["Next.js", "FastAPI", "SQLAlchemy", "Gemini API", "Tailwind CSS"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/Cellestina"
   },
   {
     "name": "VideoBot",
-    "description": "Automated content pipeline for Instagram & YouTube. Pulls Reddit stories, narrates them with TTS, and posts videos automatically.",
-    "tech": ["Python", "Reddit API", "TTS", "FFmpeg"],
+    "description": "Automated content pipeline for Instagram & YouTube. Generates Reddit-story videos with AI narration, captions, and gameplay footage — then auto-posts them.",
+    "tech": ["Python", "FastAPI", "Gemini API", "AssemblyAI", "yt-dlp", "FFmpeg"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/VideoBot"
   },
   {
     "name": "CodeVode",
-    "description": "OTP sharing platform with an Expo mobile app, FastAPI backend, and Supabase for real-time data.",
+    "description": "OTP sharing platform with an Expo mobile app, FastAPI backend, and Supabase for real-time OTP relay between family and friends.",
     "tech": ["Expo", "React Native", "FastAPI", "Supabase"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/CodeVode"
   },
   {
     "name": "EchoFrame",
-    "description": "Digital photo frame app that syncs and displays curated images with smooth transitions and ambient effects.",
-    "tech": ["React Native", "Expo", "Firebase"],
+    "description": "AI-native Video Editor, enabling users to add AI effects like captions, auto-clips and much more.",
+    "tech": ["React", "Gemini API", "AssemblyAI", "FastAPI"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/echoframe"
   },
   {
     "name": "MomoAI",
-    "description": "AI-powered assistant leveraging language models for intelligent conversations and task automation.",
-    "tech": ["Python", "Gemini API", "FastAPI"],
+    "description": "AI-powered assistant, with many AI Models with a Next.js frontend and FastAPI backend. Leverages language models for intelligent conversations and task automation.",
+    "tech": ["Next.js", "FastAPI", "OpenRouter API"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/MomoAI"
   },
   {
     "name": "Grocify",
-    "description": "Smart grocery management app with list creation, price tracking, and meal planning features.",
-    "tech": ["React Native", "Expo", "Node.js"],
+    "description": "Focused grocery list app — make lists, nothing more. Built with Expo and FastAPI.",
+    "tech": ["React Native", "Expo", "FastAPI"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/Grocify"
   },
   {
     "name": "Ludo",
-    "description": "Digital implementation of the classic Ludo board game with multiplayer support.",
-    "tech": ["Python", "Pygame"],
+    "description": "Digital implementation of the classic Ludo board game with multiplayer support for Web and Mobile.",
+    "tech": ["FastAPI", "React Native", "Next.js", "Expo"],
     "category": "built",
-    "url": null
+    "github": "https://github.com/ayaanngandhi/Ludo-Game"
   },
   {
     "name": "Android Downloader (Zingy)",
-    "description": "Kotlin Android app to download videos from various platforms using yt-dlp as the backend engine.",
-    "tech": ["Kotlin", "Android", "yt-dlp"],
+    "description": "Download videos from 1000+ platforms. Available on Android (Kotlin) and as a desktop web app. Uses yt-dlp as the download engine — paste a link, pick quality, download instantly.",
+    "tech": ["Kotlin", "Android", "Flask", "yt-dlp", "Python"],
     "category": "built",
-    "url": null
-  },
-  {
-    "name": "KittenTTS",
-    "description": "Text-to-speech experiments exploring different TTS engines and voice synthesis techniques.",
-    "tech": ["Python", "TTS", "Audio Processing"],
-    "category": "built",
-    "url": null
+    "url": "https://zingy.ayaanngandhi.in",
+    "github": "https://github.com/ayaanngandhi/Zingy-Downloader",
+    "openSource": true
   },
   {
     "name": "api-hunter",
     "description": "JavaScript tool for automated API endpoint discovery and documentation from web applications.",
     "tech": ["JavaScript", "Node.js"],
     "category": "opensource",
-    "url": "https://github.com/ayaanngandhi/api-hunter"
+    "url": "https://github.com/ayaanngandhi/api-hunter",
+    "github": "https://github.com/ayaanngandhi/api-hunter"
   },
   {
     "name": "internal-apis-guide",
-    "description": "Guide to reverse-engineering website internal APIs for building AI agents and automation tools.",
-    "tech": ["Documentation", "Web Scraping"],
+    "description": "A complete guide to reverse-engineering website internal APIs — written for AI agents and developers building automation tools.",
+    "tech": ["HTML", "Markdown", "Documentation"],
     "category": "opensource",
-    "url": "https://github.com/ayaanngandhi/internal-apis-guide"
-  },
-  {
-    "name": "Zingy-Downloader",
-    "description": "Android app + website for video downloads using yt-dlp. Cross-platform solution for media downloading.",
-    "tech": ["Kotlin", "Android", "yt-dlp", "Web"],
-    "category": "opensource",
-    "url": "https://github.com/ayaanngandhi/Zingy-Downloader"
+    "url": "https://github.com/ayaanngandhi/internal-apis-guide",
+    "github": "https://github.com/ayaanngandhi/internal-apis-guide"
   },
   {
     "name": "Rustchain",
-    "description": "Blockchain protocol implementing Proof-of-Antiquity consensus mechanism, written in Rust.",
-    "tech": ["Rust", "Blockchain", "Cryptography"],
+    "description": "Proof-of-Antiquity blockchain protocol where vintage hardware outmines new machines. AI-powered hardware fingerprinting for DePIN.",
+    "tech": ["Python", "Blockchain", "Cryptography"],
     "category": "opensource",
-    "url": "https://github.com/ayaanngandhi/Rustchain"
+    "url": "https://github.com/ayaanngandhi/Rustchain",
+    "github": "https://github.com/ayaanngandhi/Rustchain"
   },
   {
     "name": "librepods",
-    "description": "Free AirPods from the Apple ecosystem. Kotlin library for cross-platform AirPods management.",
+    "description": "AirPods liberated from Apple's ecosystem. Kotlin library enabling cross-platform AirPods management outside the Apple walled garden.",
     "tech": ["Kotlin", "Bluetooth", "Android"],
     "category": "opensource",
-    "url": "https://github.com/ayaanngandhi/librepods"
+    "url": "https://github.com/ayaanngandhi/librepods",
+    "github": "https://github.com/ayaanngandhi/librepods"
+  },
+  {
+    "name": "OpenClaw",
+    "description": "Multi-channel AI agent gateway with extensible messaging integrations. Contributed a /shell terminal exec mode feature for running commands across chat platform and added LaTeX/KaTeX support for the WebUI gateway.",
+    "tech": ["TypeScript", "Node.js", "MCP SDK"],
+    "category": "opensource",
+    "url": "https://github.com/ayaanngandhi/openclaw",
+    "github": "https://github.com/ayaanngandhi/openclaw"
   }
 ]

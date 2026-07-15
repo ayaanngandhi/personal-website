@@ -2,42 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, ChevronRight } from "lucide-react";
-import { GithubIcon, XIcon } from "@/components/Icons";
+import { GithubIcon, XIcon, InstagramIcon } from "@/components/Icons";
 import Link from "next/link";
+import Image from "next/image";
 import site from "@/data/site.json";
-
-function GridBackground() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* Gradient orbs */}
-      <motion.div
-        className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.5, 0.3, 0.5] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-    </div>
-  );
-}
 
 export default function Home() {
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <GridBackground />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -45,6 +17,24 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         className="relative z-10 mx-auto max-w-2xl text-center"
       >
+        {/* Profile image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="relative h-36 w-36 overflow-hidden rounded-full ring-2 ring-accent/30">
+            <Image
+              src="/profile.png"
+              alt="Ayaan Gandhi"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </motion.div>
+
         {/* Terminal-style prompt */}
         <motion.p
           initial={{ opacity: 0 }}
@@ -97,7 +87,7 @@ export default function Home() {
             href={site.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-accent hover:text-accent"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border glass text-muted transition-all hover:border-accent hover:text-accent"
             aria-label="GitHub"
           >
             <GithubIcon size={18} />
@@ -106,14 +96,23 @@ export default function Home() {
             href={site.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-accent hover:text-accent"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border glass text-muted transition-all hover:border-accent hover:text-accent"
             aria-label="Twitter"
           >
             <XIcon size={18} />
           </a>
           <a
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border glass text-muted transition-all hover:border-accent hover:text-accent"
+            aria-label="Instagram"
+          >
+            <InstagramIcon size={18} />
+          </a>
+          <a
             href={`mailto:${site.email}`}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-accent hover:text-accent"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border glass text-muted transition-all hover:border-accent hover:text-accent"
             aria-label="Email"
           >
             <Mail size={18} />

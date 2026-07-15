@@ -1,9 +1,21 @@
 [
-  { "name": "Python", "icon": "Code2" },
-  { "name": "TypeScript", "icon": "FileCode2" },
-  { "name": "React", "icon": "Atom" },
-  { "name": "Next.js", "icon": "Hexagon" },
-  { "name": "FastAPI", "icon": "Zap" },
-  { "name": "Gemini API", "icon": "Sparkles" },
-  { "name": "Kotlin", "icon": "Smartphone" }
+  { "name": "Python", "icon": "SiPython", "type": "si" },
+  { "name": "TypeScript", "icon": "SiTypescript", "type": "si" },
+  { "name": "React", "icon": "SiReact", "type": "si" },
+  { "name": "React Native", "icon": "SiReact", "type": "si" },
+  { "name": "Next.js", "icon": "SiNextdotjs", "type": "si" },
+  { "name": "Tailwind CSS", "icon": "SiTailwindcss", "type": "si" },
+  { "name": "Framer Motion", "icon": "SiFramer", "type": "si" },
+  { "name": "FastAPI", "icon": "SiFastapi", "type": "si" },
+  { "name": "PostgreSQL", "icon": "SiPostgresql", "type": "si" },
+  { "name": "Supabase", "icon": "SiSupabase", "type": "si" },
+  { "name": "Docker", "icon": "SiDocker", "type": "si" },
+  { "name": "Linux", "icon": "SiLinux", "type": "si" },
+  { "name": "Git", "icon": "SiGit", "type": "si" },
+  {
+    "name": "AI APIs",
+    "icon": "SiOpenai",
+    "type": "si",
+    "subtext": "OpenAI, Anthropic, Gemini, Groq, etc."
+  }
 ]

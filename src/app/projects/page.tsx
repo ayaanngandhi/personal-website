@@ -23,28 +23,48 @@ function ProjectCard({
 }: {
   project: (typeof projects)[number];
 }) {
+  const isOpenSource = project.category === "opensource" || (project as any).openSource;
+  const githubUrl = (project as any).github || (project.url?.includes("github") ? project.url : null);
+  const websiteUrl = project.url && !project.url.includes("github") ? project.url : null;
+
   return (
     <motion.div
       variants={item}
-      className="group rounded-lg border border-border bg-surface p-5 transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(34,211,238,0.05)]"
+      className="group rounded-lg border border-border glass p-5 transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(34,211,238,0.05)]"
     >
       <div className="flex items-start justify-between">
-        <h3 className="font-semibold">{project.name}</h3>
-        {project.url && (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted transition-colors hover:text-accent"
-            aria-label={`View ${project.name} on GitHub`}
-          >
-            {project.url.includes("github") ? (
-              <GithubIcon size={16} />
-            ) : (
+        <div className="flex items-center gap-2">
+          <h3 className="font-semibold">{project.name}</h3>
+          {isOpenSource && (
+            <span className="rounded-full border border-green-500/30 bg-green-500/10 px-2 py-px font-mono text-[10px] text-green-400">
+              open source
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          {websiteUrl && (
+            <a
+              href={websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted transition-colors hover:text-accent"
+              aria-label={`Visit ${project.name}`}
+            >
               <ExternalLink size={16} />
-            )}
-          </a>
-        )}
+            </a>
+          )}
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted transition-colors hover:text-accent"
+              aria-label={`View ${project.name} on GitHub`}
+            >
+              <GithubIcon size={16} />
+            </a>
+          )}
+        </div>
       </div>
       <p className="mt-2 text-sm leading-relaxed text-muted">
         {project.description}
@@ -95,9 +115,9 @@ export default function ProjectsPage() {
         </motion.div>
       </section>
 
-      {/* Open Source */}
+      {/* Contributed */}
       <section className="mt-12">
-        <h3 className="text-lg font-semibold text-accent">Open Source</h3>
+        <h3 className="text-lg font-semibold text-accent">Contributed</h3>
         <motion.div
           variants={container}
           initial="hidden"

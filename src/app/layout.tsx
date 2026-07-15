@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import ThemeToggle from "@/components/ThemeToggle";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ShaderBg } from "@/components/ShaderBg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,13 +31,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      style={{ colorScheme: "dark" }}
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <ThemeProvider>
+          <ShaderBg />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-14">{children}</main>
           <Footer />
           <ThemeToggle />
         </ThemeProvider>
