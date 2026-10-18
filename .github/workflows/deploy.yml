@@ -1,0 +1,93 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: we only read the repo. We use the plain wrangler CLI, not
+# the wrangler GitHub Action, so no deployments:write or id-token:write is needed.
+permissions:
+  contents: read
+
+# Never cancel an in-flight deploy mid-upload; queue the next run instead.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # Not sensitive: the Cloudflare account ID is a public identifier. Kept as a
+  # plain workflow env value so the only repository secret is CLOUDFLARE_API_TOKEN.
+  CLOUDFLARE_ACCOUNT_ID: 72c28f447904c6348befdc84d743965a
+  WRANGLER_SEND_METRICS: "false"
+  # CI builds should not phone home.
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  deploy:
+    # ubuntu-latest migrates to newer Ubuntu releases over time; pinned so CI
+    # cannot change underneath a commit.
+    runs-on: ubuntu-24.04
+    # A hung run must not consume hours of the private-repo Actions allowance.
+    timeout-minutes: 15
+    env:
+      # The single repository secret. Exported to steps so the preflight can
+      # read it from the shell without interpolating it into the run script.
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Check Cloudflare credentials are configured
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is empty. Create a Cloudflare API token with 'Account -> Cloudflare Pages -> Edit' and store it as the repository secret CLOUDFLARE_API_TOKEN."
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # .nvmrc pins Node 22: next@16.2.10 declares engines.node ">=20.9.0", and
+      # 22 is the conservative LTS that satisfies it. The maintainer laptop
+      # happens to run Node 26; CI and the laptop differ by design, so 26 is NOT
+      # pinned.
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      # Gate that fails the run early if the export is malformed, so a broken
+      # build never reaches the live domain.
+      - name: Verify static export is well formed
+        shell: bash
+        run: |
+          set -euo pipefail
+          # out/index.html          - the root document served at "/".
+          # out/{about,projects,contact}/index.html - the trailingSlash:true
+          #                           payoff. Without trailingSlash Next emits
+          #                           about.html plus an about/ directory of
+          #                           RSC payloads, the host 301s /about to
+          #                           /about/ and 404s. These ARE the navbar
+          #                           links, so their absence breaks the site.
+          # out/_headers            - caching + security rules; Next copies
+          #                           public/ into out/, so its absence
+          #                           silently drops every rule.
+          # out/404.html            - served by Cloudflare Pages for unmatched
+          #                           paths.
+          for f in out/index.html out/about/index.html out/projects/index.html out/contact/index.html out/_headers out/404.html; do
+            if [ ! -f "$f" ]; then
+              echo "::error::static export is missing required file: $f"
+              exit 1
+            fi
+          done
+          echo "Static export verified: all pages, _headers and 404.html present."
+
+      - name: Deploy to Cloudflare Pages
+        run: npx --yes wrangler@4 pages deploy out --project-name=personal-website --branch=main
