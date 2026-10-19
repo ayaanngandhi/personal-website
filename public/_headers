@@ -12,6 +12,10 @@
 /profile.png
   Cache-Control: public, max-age=0, must-revalidate
 
+# The OG card is also not content-hashed, so revalidate it for the same reason.
+/og.png
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

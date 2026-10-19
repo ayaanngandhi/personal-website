@@ -18,9 +18,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ayaanngandhi.in"),
   title: "Ayaan Gandhi — Portfolio",
   description:
     "Self-taught programmer, AI/ML enthusiast. Building things that solve real problems.",
+  openGraph: {
+    title: "Ayaan Gandhi — Portfolio",
+    description:
+      "Self-taught programmer, AI/ML enthusiast. Building things that solve real problems.",
+    url: "https://ayaanngandhi.in",
+    siteName: "Ayaan Gandhi",
+    type: "website",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Ayaan Gandhi — portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ayaan Gandhi — Portfolio",
+    description:
+      "Self-taught programmer, AI/ML enthusiast. Building things that solve real problems.",
+    images: ["/og.png"],
+    creator: "@ayaanngandhi",
+  },
 };
 
 export default function RootLayout({
