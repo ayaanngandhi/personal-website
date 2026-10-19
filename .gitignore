@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Live visitor log written by the logging proxy: runtime data, never shipped.
+visit_logs.json
