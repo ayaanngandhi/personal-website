@@ -159,7 +159,7 @@ function ProjectDialog({
       onClick={(e) => {
         if (e.target === dialogRef.current) onClose();
       }}
-      className="m-auto w-[min(34rem,calc(100vw-2rem))] max-h-[85vh] overflow-y-auto rounded-lg border border-border glass-strong p-5 text-foreground backdrop:bg-black/60"
+      className="m-auto w-[min(34rem,calc(100vw-2rem))] max-h-[85vh] overflow-y-auto rounded-lg border border-border glass-dialog detail-dialog p-5 text-foreground"
     >
       {project && (
         <>
