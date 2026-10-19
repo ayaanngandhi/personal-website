@@ -77,7 +77,7 @@ export default function LinksPage() {
       >
         <div className="mb-5 h-24 w-24 overflow-hidden rounded-full ring-2 ring-accent/30 shadow-lg">
           <Image
-            src="/profile.png?v=3"
+            src="/profile.png?v=5"
             alt="Ayaan Gandhi"
             width={96}
             height={96}
