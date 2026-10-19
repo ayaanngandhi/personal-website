@@ -2,98 +2,134 @@
   {
     "name": "Cellestina",
     "description": "E-commerce store for bracelets & pendants with a Next.js frontend, FastAPI backend, and Gemini AI chatbot which knows everything about the business. Built for my mom's business.",
+    "details": "A small e-commerce store for handmade bracelets and pendants, built for my mom's business. The interesting engineering is in connecting an ordinary storefront to an assistant: the front end renders the catalogue, a FastAPI service backed by SQLAlchemy holds products and orders, and a Gemini-powered chatbot answers shopper questions from that same store data rather than from general knowledge. Keeping the assistant grounded in the live catalogue, so its answers stay accurate as products change, was the main problem to solve.",
     "tech": ["Next.js", "FastAPI", "SQLAlchemy", "Gemini API", "Tailwind CSS"],
     "category": "built",
+    "status": "Active",
     "github": "https://github.com/ayaanngandhi/Cellestina"
   },
   {
     "name": "VideoBot",
     "description": "Automated content pipeline for Instagram & YouTube. Generates Reddit-story videos with AI narration, captions, and gameplay footage — then auto-posts them.",
+    "details": "An automated pipeline that turns written stories into finished short videos. It generates narration and timed captions, layers background gameplay footage underneath, and assembles the result with FFmpeg. The engineering focus is orchestration: several AI models and services have to hand work to one another reliably, from text through speech synthesis and caption timing to final encoding, with a FastAPI service coordinating the stages. Getting captions and audio to line up consistently, and keeping the pipeline resilient when a stage fails, was most of the work.",
     "tech": ["Python", "FastAPI", "Gemini API", "AssemblyAI", "yt-dlp", "FFmpeg"],
     "category": "built",
+    "status": "Active",
     "github": "https://github.com/ayaanngandhi/VideoBot"
   },
   {
     "name": "CodeVode",
     "description": "OTP sharing platform with an Expo mobile app, FastAPI backend, and Supabase for real-time OTP relay between family and friends.",
+    "details": "A small utility for sharing one-time codes between people you trust, so a code sent to one person can reach someone who needs it. An Expo mobile app talks to a FastAPI backend, and Supabase provides the real-time layer that pushes a shared code to the right people as soon as it arrives. The interesting part is the relay: codes are short-lived and sensitive, so the design keeps them moving quickly through a realtime channel while limiting how long anything is retained and who is allowed to read it.",
     "tech": ["Expo", "React Native", "FastAPI", "Supabase"],
     "category": "built",
+    "status": "Completed",
     "github": "https://github.com/ayaanngandhi/CodeVode"
   },
   {
     "name": "EchoFrame",
     "description": "AI-native Video Editor, enabling users to add AI effects like captions, auto-clips and much more.",
+    "details": "A browser-based video editor that treats AI operations as first-class editing tools. Instead of exporting to a separate service, a user can request captions or automatically extracted clips from inside the editing timeline. A React interface runs the editing experience, while a FastAPI backend coordinates speech-to-text and language-model calls that produce the effects. The engineering challenge is making slow, asynchronous AI work feel responsive within an editor, and mapping model output back onto precise points in the timeline.",
     "tech": ["React", "Gemini API", "AssemblyAI", "FastAPI"],
     "category": "built",
+    "status": "Completed",
     "github": "https://github.com/ayaanngandhi/echoframe"
   },
   {
     "name": "MomoAI",
     "description": "AI-powered assistant, with many AI Models with a Next.js frontend and FastAPI backend. Leverages language models for intelligent conversations and task automation.",
+    "details": "An assistant that routes a conversation across several language models rather than locking users to a single provider. A Next.js front end handles the chat experience, and a FastAPI backend manages model selection, requests and streamed responses through an aggregating API. The interesting engineering is abstraction: presenting many models behind one consistent interface, normalising their differing response formats, and letting a request move between them without the user having to care which model answered.",
     "tech": ["Next.js", "FastAPI", "OpenRouter API"],
     "category": "built",
+    "status": "Active",
     "github": "https://github.com/ayaanngandhi/MomoAI"
   },
   {
     "name": "Grocify",
     "description": "Focused grocery list app — make lists, nothing more. Built with Expo and FastAPI.",
+    "details": "A deliberately narrow grocery list app: it makes lists and does little else. The goal is a tool that stays out of the way in a supermarket, so the design favours speed and simplicity over features. An Expo and React Native app provides the interface across platforms, with a FastAPI backend for storing and syncing lists. Most of the engineering goes into the small things — quick entry, dependable sync between devices, and a clear sense of list state — rather than breadth of functionality.",
     "tech": ["React Native", "Expo", "FastAPI"],
     "category": "built",
+    "status": "Completed",
     "github": "https://github.com/ayaanngandhi/Grocify"
   },
   {
     "name": "Ludo",
     "description": "Digital implementation of the classic Ludo board game with multiplayer support for Web and Mobile.",
+    "details": "A digital version of the classic Ludo board game, playable on the web and on mobile with multiplayer support. The hard part of a board game is not the graphics but the rules: turn order, dice handling, safe squares, captures and win conditions all have to stay consistent for every player at once. A FastAPI backend owns the game state so no client can disagree about what happened, while React Native and Next.js front ends share that single source of truth across web and mobile.",
     "tech": ["FastAPI", "React Native", "Next.js", "Expo"],
     "category": "built",
+    "status": "Completed",
     "github": "https://github.com/ayaanngandhi/Ludo-Game"
   },
   {
     "name": "Android Downloader (Zingy)",
     "description": "Download videos from 1000+ platforms. Available on Android (Kotlin) and as a desktop web app. Uses yt-dlp as the download engine — paste a link, pick quality, download instantly.",
+    "details": "A downloader that takes a media link and saves the file at the quality you choose, offered both as an Android app and as a desktop web app. Both front ends drive the same proven download engine, so platform support comes from that engine rather than from re-implementing extraction site by site. The Kotlin Android client and a small Python web service each provide a simple paste-a-link interface. The interesting work is packaging a command-line engine behind two very different interfaces while keeping the experience quick and predictable.",
     "tech": ["Kotlin", "Android", "Flask", "yt-dlp", "Python"],
     "category": "built",
+    "status": "Active",
     "url": "https://zingy.ayaanngandhi.in",
     "github": "https://github.com/ayaanngandhi/Zingy-Downloader",
     "openSource": true
   },
   {
+    "name": "Trace",
+    "description": "Client-side inspector for AI media provenance — signed C2PA content credentials, metadata and generator fingerprints, invisible watermark structure, and forensic signals. A static site with no backend, so files never leave the browser.",
+    "details": "A browser-based inspector for the provenance of AI-generated media. It reads signed C2PA content credentials, metadata and generator fingerprints, invisible watermark structure, and other forensic signals, and lays out what it finds so a file's origins are easier to judge. It is a static site with no backend: files are analysed entirely in the browser and never leave the user's machine. An optional watermark check uses the Google SynthID API only when the visitor supplies their own API key; without a key, Trace reports that check as not configured rather than implying the file passed.",
+    "tech": ["JavaScript", "C2PA", "Web Crypto"],
+    "category": "built",
+    "status": "Open source",
+    "url": "https://trace.ayaanngandhi.in",
+    "openSource": true
+  },
+  {
     "name": "api-hunter",
     "description": "JavaScript tool for automated API endpoint discovery and documentation from web applications.",
+    "details": "A JavaScript tool that observes a web application and records the API endpoints it actually calls, then turns what it finds into readable documentation. Rather than guessing at an interface, it watches real traffic, so the result reflects how the application truly behaves. Written for Node.js, it is aimed at developers and automated agents that need a map of an application's internal requests. The notable engineering is filtering the noise out of live traffic so the output is a clean, useful endpoint list rather than a raw dump.",
     "tech": ["JavaScript", "Node.js"],
     "category": "opensource",
+    "status": "Open source",
     "url": "https://github.com/ayaanngandhi/api-hunter",
     "github": "https://github.com/ayaanngandhi/api-hunter"
   },
   {
     "name": "internal-apis-guide",
     "description": "A complete guide to reverse-engineering website internal APIs — written for AI agents and developers building automation tools.",
+    "details": "A written guide to understanding the internal APIs that websites use behind their visible pages, aimed at developers and automated agents building integrations. It covers how to observe a site's own requests, how to read and reason about the responses, and how to turn that understanding into something programmatic and repeatable. The material is delivered as documentation in Markdown and HTML rather than as a library. The interesting part is teaching a method: how to investigate an unfamiliar interface carefully and describe what you find so others can reuse it.",
     "tech": ["HTML", "Markdown", "Documentation"],
     "category": "opensource",
+    "status": "Open source",
     "url": "https://github.com/ayaanngandhi/internal-apis-guide",
     "github": "https://github.com/ayaanngandhi/internal-apis-guide"
   },
   {
     "name": "Rustchain",
     "description": "Proof-of-Antiquity blockchain protocol where vintage hardware outmines new machines. AI-powered hardware fingerprinting for DePIN.",
+    "details": "A blockchain protocol built around the idea that older hardware should be able to earn more, not less, than new machines. It replaces the usual raw-compute race with a proof that rewards the age and authenticity of the hardware taking part. The core engineering is fingerprinting: reliably identifying physical machines so the network can trust that a participant really is the vintage device it claims to be, which is what makes the incentive model meaningful. Written in Python, it explores how a decentralised physical-infrastructure network might value longevity.",
     "tech": ["Python", "Blockchain", "Cryptography"],
     "category": "opensource",
+    "status": "Open source",
     "url": "https://github.com/ayaanngandhi/Rustchain",
     "github": "https://github.com/ayaanngandhi/Rustchain"
   },
   {
     "name": "librepods",
     "description": "AirPods liberated from Apple's ecosystem. Kotlin library enabling cross-platform AirPods management outside the Apple walled garden.",
+    "details": "A Kotlin library that lets Android devices talk to AirPods directly, outside Apple's own software. It works by speaking the Bluetooth protocols the earbuds already use, exposing controls and status that are otherwise only reachable from Apple hardware. The interesting engineering is protocol reverse-engineering and reliability: Bluetooth connections drop, responses arrive out of order, and the library has to present a stable, usable interface on top of an unpredictable radio link. The result is cross-platform management of devices designed to work within one ecosystem.",
     "tech": ["Kotlin", "Bluetooth", "Android"],
     "category": "opensource",
+    "status": "Open source",
     "url": "https://github.com/ayaanngandhi/librepods",
     "github": "https://github.com/ayaanngandhi/librepods"
   },
   {
     "name": "OpenClaw",
     "description": "Multi-channel AI agent gateway with extensible messaging integrations. Contributed a /shell terminal exec mode feature for running commands across chat platform and added LaTeX/KaTeX support for the WebUI gateway.",
+    "details": "An open-source gateway that connects AI agents to many messaging channels through a single extensible core. My contributions added a terminal-execution mode, letting an agent run commands from within a chat, and LaTeX rendering for the web interface so mathematical answers display properly. The project is written in TypeScript on Node.js and built around the MCP SDK, so integrations can be added without rewriting the core. The interesting part is the abstraction: one agent loop serving many chat platforms through pluggable channels and tools.",
     "tech": ["TypeScript", "Node.js", "MCP SDK"],
     "category": "opensource",
+    "status": "Open source",
     "url": "https://github.com/ayaanngandhi/openclaw",
     "github": "https://github.com/ayaanngandhi/openclaw"
   }

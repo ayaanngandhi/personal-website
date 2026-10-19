@@ -26,7 +26,7 @@ export default function Home() {
         >
           <div className="relative h-36 w-36 overflow-hidden rounded-full ring-2 ring-accent/30">
             <Image
-              src="/profile.png"
+              src="/profile.png?v=3"
               alt="Ayaan Gandhi"
               fill
               className="object-cover"
