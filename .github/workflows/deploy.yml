@@ -81,7 +81,7 @@ jobs:
           #                           silently drops every rule.
           # out/404.html            - served by Cloudflare Pages for unmatched
           #                           paths.
-          for f in out/index.html out/about/index.html out/projects/index.html out/contact/index.html out/_headers out/404.html; do
+          for f in out/index.html out/about/index.html out/projects/index.html out/contact/index.html out/links/index.html out/laugh/index.html out/_headers out/404.html; do
             if [ ! -f "$f" ]; then
               echo "::error::static export is missing required file: $f"
               exit 1
