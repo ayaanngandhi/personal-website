@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ayaan Gandhi — Links",
   description: "All of Ayaan's links in one place.",
+  // Without this the route inherits the root canonical ("/"), telling crawlers
+  // this page IS the home page.
+  alternates: { canonical: "/links/" },
   robots: { index: false, follow: false },
 };
 

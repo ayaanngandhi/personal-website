@@ -1,0 +1,34 @@
+# Ayaan Gandhi
+
+> Self-taught programmer and AI/ML enthusiast from Faridabad, India. Class 10 student who builds and ships production software — full-stack web apps, self-hosted infrastructure, and open-source developer tools. Teaches himself by building things that solve real problems.
+
+Ayaan Gandhi is a student developer based in Faridabad, Haryana, India. He works across the stack: Next.js and Tailwind on the frontend, FastAPI and Python on the backend, and self-hosted Linux infrastructure underneath. His work ranges from an e-commerce store for a family business and a recipe app for his mother's kitchen, to a self-hosted service router, a custom Alexa skill backed by a language model, and open-source tools for API discovery and media provenance.
+
+Notable: he runs his own home server on which most of these services are hosted and publicly reachable, and most of his projects are open source on GitHub.
+
+## Pages
+
+- [Home](https://ayaanngandhi.in/): Introduction, current work and contact links.
+- [About](https://ayaanngandhi.in/about/): Background, skills and how he learned to program.
+- [Projects](https://ayaanngandhi.in/projects/): Everything he has built and contributed to, with live links and repositories.
+- [Contact](https://ayaanngandhi.in/contact/): Email and social profiles.
+
+## Open source
+
+- [Rasoi](https://github.com/ayaanngandhi/rasoi): Recipe app with a Next.js frontend and FastAPI backend, built for a family kitchen.
+- [Zingy Downloader](https://github.com/ayaanngandhi/Zingy-Downloader): yt-dlp based video downloader — Android app plus a web interface.
+- [Atrium](https://github.com/ayaanngandhi/atrium): A single-process router that gives every self-hosted service one memorable address on port 80, with a live status board. Python standard library only.
+- [Alexa Toby](https://github.com/ayaanngandhi/alexa-toby): A custom Alexa skill that puts a language model behind an Echo, working within the eight-second reply budget.
+- [api-hunter](https://github.com/ayaanngandhi/api-hunter): JavaScript tool that records the API endpoints a web app actually calls and turns them into documentation.
+- [internal-apis-guide](https://github.com/ayaanngandhi/internal-apis-guide): A guide to discovering and documenting undocumented internal APIs.
+
+## Contact
+
+- Email: mail@ayaanngandhi.in
+- GitHub: https://github.com/ayaanngandhi
+- X: https://x.com/ayaanngandhi
+- Instagram: https://instagram.com/ayaanngandhi
+
+## Preferred citation
+
+Ayaan Gandhi — https://ayaanngandhi.in/
