@@ -1,6 +1,7 @@
 [
   {
     "name": "Cellestina",
+    "slug": "cellestina",
     "description": "E-commerce store for bracelets & pendants with a Next.js frontend, FastAPI backend, and Gemini AI chatbot which knows everything about the business. Built for my mom's business.",
     "details": "A small e-commerce store for handmade bracelets and pendants, built for my mom's business. The interesting engineering is in connecting an ordinary storefront to an assistant: the front end renders the catalogue, a FastAPI service backed by SQLAlchemy holds products and orders, and a Gemini-powered chatbot answers shopper questions from that same store data rather than from general knowledge. Keeping the assistant grounded in the live catalogue, so its answers stay accurate as products change, was the main problem to solve.",
     "tech": [
@@ -16,6 +17,8 @@
   },
   {
     "name": "Rasoi",
+    "slug": "rasoi",
+    "image": "/projects/rasoi.jpg",
     "description": "A recipe app for my mom's kitchen. Browse, add and edit recipes with photos, backed by a FastAPI service and SQLite.",
     "details": "A small, practical web app built so my mom's recipes live somewhere better than screenshots and notebooks. A Next.js frontend handles browsing, creating and editing recipes with photo uploads, while a FastAPI backend stores recipes and images in SQLite and serves the uploaded media back. The interesting part was keeping it simple enough to be genuinely usable by someone who is not a developer: short flows, forgiving forms, and image handling that just works without a cloud storage dependency.",
     "tech": [
@@ -32,6 +35,7 @@
   },
   {
     "name": "VideoBot",
+    "slug": "videobot",
     "description": "Automated content pipeline for Instagram & YouTube. Generates Reddit-story videos with AI narration, captions, and gameplay footage — then auto-posts them.",
     "details": "An automated pipeline that turns written stories into finished short videos. It generates narration and timed captions, layers background gameplay footage underneath, and assembles the result with FFmpeg. The engineering focus is orchestration: several AI models and services have to hand work to one another reliably, from text through speech synthesis and caption timing to final encoding, with a FastAPI service coordinating the stages. Getting captions and audio to line up consistently, and keeping the pipeline resilient when a stage fails, was most of the work.",
     "tech": [
@@ -48,6 +52,7 @@
   },
   {
     "name": "CodeVode",
+    "slug": "codevode",
     "description": "OTP sharing platform with an Expo mobile app, FastAPI backend, and Supabase for real-time OTP relay between family and friends.",
     "details": "A small utility for sharing one-time codes between people you trust, so a code sent to one person can reach someone who needs it. An Expo mobile app talks to a FastAPI backend, and Supabase provides the real-time layer that pushes a shared code to the right people as soon as it arrives. The interesting part is the relay: codes are short-lived and sensitive, so the design keeps them moving quickly through a realtime channel while limiting how long anything is retained and who is allowed to read it.",
     "tech": [
@@ -62,6 +67,7 @@
   },
   {
     "name": "EchoFrame",
+    "slug": "echoframe",
     "description": "AI-native Video Editor, enabling users to add AI effects like captions, auto-clips and much more.",
     "details": "A browser-based video editor that treats AI operations as first-class editing tools. Instead of exporting to a separate service, a user can request captions or automatically extracted clips from inside the editing timeline. A React interface runs the editing experience, while a FastAPI backend coordinates speech-to-text and language-model calls that produce the effects. The engineering challenge is making slow, asynchronous AI work feel responsive within an editor, and mapping model output back onto precise points in the timeline.",
     "tech": [
@@ -76,6 +82,7 @@
   },
   {
     "name": "MomoAI",
+    "slug": "momoai",
     "description": "AI-powered assistant, with many AI Models with a Next.js frontend and FastAPI backend. Leverages language models for intelligent conversations and task automation.",
     "details": "An assistant that routes a conversation across several language models rather than locking users to a single provider. A Next.js front end handles the chat experience, and a FastAPI backend manages model selection, requests and streamed responses through an aggregating API. The interesting engineering is abstraction: presenting many models behind one consistent interface, normalising their differing response formats, and letting a request move between them without the user having to care which model answered.",
     "tech": [
@@ -89,6 +96,7 @@
   },
   {
     "name": "Grocify",
+    "slug": "grocify",
     "description": "Focused grocery list app — make lists, nothing more. Built with Expo and FastAPI.",
     "details": "A deliberately narrow grocery list app: it makes lists and does little else. The goal is a tool that stays out of the way in a supermarket, so the design favours speed and simplicity over features. An Expo and React Native app provides the interface across platforms, with a FastAPI backend for storing and syncing lists. Most of the engineering goes into the small things — quick entry, dependable sync between devices, and a clear sense of list state — rather than breadth of functionality.",
     "tech": [
@@ -102,6 +110,7 @@
   },
   {
     "name": "Ludo",
+    "slug": "ludo",
     "description": "Digital implementation of the classic Ludo board game with multiplayer support for Web and Mobile.",
     "details": "A digital version of the classic Ludo board game, playable on the web and on mobile with multiplayer support. The hard part of a board game is not the graphics but the rules: turn order, dice handling, safe squares, captures and win conditions all have to stay consistent for every player at once. A FastAPI backend owns the game state so no client can disagree about what happened, while React Native and Next.js front ends share that single source of truth across web and mobile.",
     "tech": [
@@ -116,6 +125,8 @@
   },
   {
     "name": "Android Downloader (Zingy)",
+    "slug": "android-downloader-zingy",
+    "image": "/projects/zingy.jpg",
     "description": "Download videos from 1000+ platforms. Available on Android (Kotlin) and as a desktop web app. Uses yt-dlp as the download engine — paste a link, pick quality, download instantly.",
     "details": "A downloader that takes a media link and saves the file at the quality you choose, offered both as an Android app and as a desktop web app. Both front ends drive the same proven download engine, so platform support comes from that engine rather than from re-implementing extraction site by site. The Kotlin Android client and a small Python web service each provide a simple paste-a-link interface. The interesting work is packaging a command-line engine behind two very different interfaces while keeping the experience quick and predictable.",
     "tech": [
@@ -133,6 +144,8 @@
   },
   {
     "name": "Atrium",
+    "slug": "atrium",
+    "image": "/projects/atrium.jpg",
     "description": "One door to every self-hosted service. A router on port 80 that sends /service to that service's own port, answers the root with a live status board, and leaves every existing hostname untouched. Standard library only.",
     "details": "Every service on a home server gets its own port, and nobody remembers port numbers, so half of them never get used. Atrium fixes the addressing problem with a single process on port 80: /zingy redirects to whatever is running on 4321, and the root answers with a board listing every service and whether its port is actually listening. It answers with a redirect rather than proxying, which matters more than it sounds — each app keeps its own origin and its own port, so there is no base-path configuration to add, no absolute URLs to rewrite, and no new bottleneck for uploads. The rule that made it safe to put in front of a working setup is that only anonymous addresses get the board, while every named host is passed through untouched to the reverse proxy that already served it, so no existing vhost could break. One JSON config, re-read when the file changes, and a systemd unit that grants exactly one capability so a privileged port does not mean running as root.",
     "tech": [
@@ -148,6 +161,8 @@
   },
   {
     "name": "Emporio Youth Summit",
+    "slug": "emporio-youth-summit",
+    "image": "/projects/emporio-youth-summit.jpg",
     "description": "Editorial landing site for a youth summit, built around a classical Greco-Roman visual language — parchment and ink, engraved rules, sharp corners, and typography doing the work instead of decoration.",
     "details": "A conference site built to look like a printed invitation rather than a startup landing page: a parchment-and-ink palette, engraved hairlines, sharp corners, and a display serif carrying the whole page. It is a static export with no backend, so it costs nothing to host and loads instantly. Two details made it feel right. The cursor ring runs on a spring tuned to settle in about 130 milliseconds instead of the sluggish default. And the link-in-bio page is deliberately its own minimal route, because it opens inside Instagram's in-app browser on a phone, where anything heavier falls apart. Most of the work was refusing the generic options: the visual language had to stay coherent on a page built from a brochure that specified neither a date nor a venue.",
     "tech": [
@@ -162,6 +177,7 @@
   },
   {
     "name": "Alexa Toby",
+    "slug": "alexa-toby",
     "description": "A custom Alexa skill that puts a real agent behind the Echo. Ask it anything and it answers through a hosted language model, with a web search tool for anything recent — stock wake word, stock speakers.",
     "details": "You cannot replace the assistant inside an Echo, because speech recognition and language understanding run in Amazon's cloud. A custom skill is the supported way to substitute the brain while keeping the wake word and Drop In intact, so this is a small self-hosted backend that does exactly that. The engineering is almost entirely one constraint: the reply must arrive within eight seconds, which buys exactly one tool round. If less than 2.5 seconds remain after the model decides to search, the search is skipped and it answers from memory instead — a deliberate trade that fails fast rather than being cut off mid-sentence. Search itself goes through DuckDuckGo's HTML endpoint with an instant-answer fallback and a five-minute cache, because it rate-limits by IP and returns a captcha page rather than an error. A second interaction model handles Hindi.",
     "tech": [
@@ -177,6 +193,7 @@
   },
   {
     "name": "api-hunter",
+    "slug": "api-hunter",
     "description": "JavaScript tool for automated API endpoint discovery and documentation from web applications.",
     "details": "A JavaScript tool that observes a web application and records the API endpoints it actually calls, then turns what it finds into readable documentation. Rather than guessing at an interface, it watches real traffic, so the result reflects how the application truly behaves. Written for Node.js, it is aimed at developers and automated agents that need a map of an application's internal requests. The notable engineering is filtering the noise out of live traffic so the output is a clean, useful endpoint list rather than a raw dump.",
     "tech": [
@@ -190,6 +207,7 @@
   },
   {
     "name": "internal-apis-guide",
+    "slug": "internal-apis-guide",
     "description": "A complete guide to reverse-engineering website internal APIs — written for AI agents and developers building automation tools.",
     "details": "A written guide to understanding the internal APIs that websites use behind their visible pages, aimed at developers and automated agents building integrations. It covers how to observe a site's own requests, how to read and reason about the responses, and how to turn that understanding into something programmatic and repeatable. The material is delivered as documentation in Markdown and HTML rather than as a library. The interesting part is teaching a method: how to investigate an unfamiliar interface carefully and describe what you find so others can reuse it.",
     "tech": [
@@ -204,6 +222,7 @@
   },
   {
     "name": "Rustchain",
+    "slug": "rustchain",
     "description": "Proof-of-Antiquity blockchain protocol where vintage hardware outmines new machines. AI-powered hardware fingerprinting for DePIN.",
     "details": "A blockchain protocol built around the idea that older hardware should be able to earn more, not less, than new machines. It replaces the usual raw-compute race with a proof that rewards the age and authenticity of the hardware taking part. The core engineering is fingerprinting: reliably identifying physical machines so the network can trust that a participant really is the vintage device it claims to be, which is what makes the incentive model meaningful. Written in Python, it explores how a decentralised physical-infrastructure network might value longevity.",
     "tech": [
@@ -218,6 +237,7 @@
   },
   {
     "name": "librepods",
+    "slug": "librepods",
     "description": "AirPods liberated from Apple's ecosystem. Kotlin library enabling cross-platform AirPods management outside the Apple walled garden.",
     "details": "A Kotlin library that lets Android devices talk to AirPods directly, outside Apple's own software. It works by speaking the Bluetooth protocols the earbuds already use, exposing controls and status that are otherwise only reachable from Apple hardware. The interesting engineering is protocol reverse-engineering and reliability: Bluetooth connections drop, responses arrive out of order, and the library has to present a stable, usable interface on top of an unpredictable radio link. The result is cross-platform management of devices designed to work within one ecosystem.",
     "tech": [
@@ -232,6 +252,7 @@
   },
   {
     "name": "OpenClaw",
+    "slug": "openclaw",
     "description": "Multi-channel AI agent gateway with extensible messaging integrations. Contributed a /shell terminal exec mode feature for running commands across chat platform and added LaTeX/KaTeX support for the WebUI gateway.",
     "details": "An open-source gateway that connects AI agents to many messaging channels through a single extensible core. My contributions added a terminal-execution mode, letting an agent run commands from within a chat, and LaTeX rendering for the web interface so mathematical answers display properly. The project is written in TypeScript on Node.js and built around the MCP SDK, so integrations can be added without rewriting the core. The interesting part is the abstraction: one agent loop serving many chat platforms through pluggable channels and tools.",
     "tech": [

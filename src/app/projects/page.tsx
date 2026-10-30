@@ -3,11 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Info, X } from "lucide-react";
+import Link from "next/link";
 import { GithubIcon } from "@/components/Icons";
 import projects from "@/data/projects.json";
 
 type Project = {
   name: string;
+  slug: string;
   description: string;
   details: string;
   tech: string[];
@@ -52,7 +54,14 @@ function ProjectCard({
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2">
-          <h3 className="font-semibold">{project.name}</h3>
+          <h3 className="font-semibold">
+            <Link
+              href={`/projects/${project.slug}/`}
+              className="transition-colors hover:text-accent"
+            >
+              {project.name}
+            </Link>
+          </h3>
           {isOpenSource && (
             <span className="rounded-full border border-green-500/30 bg-green-500/10 px-2 py-px font-mono text-[10px] text-green-400">
               open source

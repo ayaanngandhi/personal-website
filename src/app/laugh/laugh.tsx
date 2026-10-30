@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export default function Laugh() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -35,8 +35,8 @@ export default function Laugh() {
   }, []);
 
   return (
-    <div id="c" ref={containerRef}>
+    <h1 id="c" ref={containerRef}>
       BWAHAHAHA
-    </div>
+    </h1>
   );
 }

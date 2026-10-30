@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import projects from "@/data/projects.json";
 
 /**
  * Sitemap, generated at build time.
@@ -43,5 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.5,
     },
+    ...projects.map((project) => ({
+      url: `${BASE}/projects/${project.slug}/`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 }
