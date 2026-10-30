@@ -41,6 +41,9 @@ function ProjectCard({
 }) {
   const isOpenSource = project.category === "opensource" || project.openSource;
   const websiteUrl = project.url && !project.url.includes("github") ? project.url : null;
+  const repoUrl = isOpenSource
+    ? project.github || (project.url?.includes("github") ? project.url : null)
+    : null;
 
   return (
     <motion.div
@@ -54,6 +57,17 @@ function ProjectCard({
             <span className="rounded-full border border-green-500/30 bg-green-500/10 px-2 py-px font-mono text-[10px] text-green-400">
               open source
             </span>
+          )}
+          {repoUrl && (
+            <a
+              href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="-ml-1 text-muted transition-colors hover:text-accent"
+              aria-label={`${project.name} on GitHub`}
+            >
+              <GithubIcon size={14} />
+            </a>
           )}
         </div>
         <div className="flex items-center gap-2">
@@ -113,10 +127,14 @@ function ProjectDialog({
     : null;
   const websiteUrl =
     project && project.url && !project.url.includes("github") ? project.url : null;
-  // Shown inside the detail dialog only, for projects whose repository is the
-  // deliverable itself (the Contributed / open-source set). Cards never link
-  // to GitHub.
-  const showRepo = project?.category === "opensource" && repoUrl;
+  // Repo link is shown for anything genuinely open source: the Contributed set,
+  // and Built projects whose code is public. A Built project with no public
+  // repo shows no repository link at all, rather than a link that 404s.
+  const showRepo = !!(
+    project &&
+    (project.category === "opensource" || project.openSource) &&
+    repoUrl
+  );
 
   // Native <dialog> makes the rest of the page inert but does not wrap Tab
   // focus at the edges, so trap it explicitly.
