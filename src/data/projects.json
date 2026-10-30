@@ -132,21 +132,6 @@
     "openSource": true
   },
   {
-    "name": "Trace",
-    "description": "Client-side inspector for AI media provenance — signed C2PA content credentials, metadata and generator fingerprints, invisible watermark structure, and forensic signals. A static site with no backend, so files never leave the browser.",
-    "details": "A browser-based inspector for the provenance of AI-generated media. It reads signed C2PA content credentials, metadata and generator fingerprints, invisible watermark structure, and other forensic signals, and lays out what it finds so a file's origins are easier to judge. It is a static site with no backend: files are analysed entirely in the browser and never leave the user's machine. An optional watermark check uses the Google SynthID API only when the visitor supplies their own API key; without a key, Trace reports that check as not configured rather than implying the file passed.",
-    "tech": [
-      "JavaScript",
-      "C2PA",
-      "Web Crypto"
-    ],
-    "category": "built",
-    "status": "Open source",
-    "url": "https://trace.ayaanngandhi.in",
-    "github": "https://github.com/ayaanngandhi/trace",
-    "openSource": true
-  },
-  {
     "name": "Atrium",
     "description": "One door to every self-hosted service. A router on port 80 that sends /service to that service's own port, answers the root with a live status board, and leaves every existing hostname untouched. Standard library only.",
     "details": "Every service on a home server gets its own port, and nobody remembers port numbers, so half of them never get used. Atrium fixes the addressing problem with a single process on port 80: /zingy redirects to whatever is running on 4321, and the root answers with a board listing every service and whether its port is actually listening. It answers with a redirect rather than proxying, which matters more than it sounds — each app keeps its own origin and its own port, so there is no base-path configuration to add, no absolute URLs to rewrite, and no new bottleneck for uploads. The rule that made it safe to put in front of a working setup is that only anonymous addresses get the board, while every named host is passed through untouched to the reverse proxy that already served it, so no existing vhost could break. One JSON config, re-read when the file changes, and a systemd unit that grants exactly one capability so a privileged port does not mean running as root.",
@@ -186,7 +171,9 @@
       "Cloudflare Tunnel"
     ],
     "category": "built",
-    "status": "Active"
+    "status": "Open source",
+    "github": "https://github.com/ayaanngandhi/alexa-toby",
+    "openSource": true
   },
   {
     "name": "api-hunter",

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import {
   Globe,
   Smartphone,
-  ScanSearch,
   Mail,
   MessageCircle,
   ExternalLink,
@@ -25,12 +24,6 @@ const links = [
     url: "https://zingy.ayaanngandhi.in",
     icon: Smartphone,
     color: "#a78bfa",
-  },
-  {
-    label: "Trace",
-    url: "https://trace.ayaanngandhi.in",
-    icon: ScanSearch,
-    color: "#facc15",
   },
   {
     label: "Contact Me",
