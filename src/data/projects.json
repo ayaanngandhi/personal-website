@@ -264,5 +264,23 @@
     "status": "Open source",
     "url": "https://github.com/ayaanngandhi/openclaw",
     "github": "https://github.com/ayaanngandhi/openclaw"
+  },
+  {
+    "name": "Tablinum",
+    "slug": "tablinum",
+    "image": "/projects/tablinum.jpg",
+    "description": "A private shelf for everything I write. It serves a folder of files as a clean, searchable index behind one password, from a single Python file with no dependencies and no database.",
+    "details": "In a Roman house the tablinum was the record room off the atrium where the family kept its papers, which is the whole idea: the atrium is the front door to every service on the network, and this is the room behind it where the documents actually live. It started as a folder of HTML reports nobody could find, and became a server that turns a directory into an index, groups it by folder, sorts newest first, and checks a password before it shows a single filename. The security is the interesting part. The password only ever exists as a bcrypt hash on disk, sessions are signed with HMAC and kept in an HttpOnly cookie, and the form token signs its own timestamp instead of matching a second cookie, after the double-submit version produced a login page that quietly rejected correct passwords whenever the browser and the server disagreed about which token was current. One file, no framework, no build step to serve, so the whole program can be read in an afternoon.",
+    "tech": [
+      "Python",
+      "HTTP",
+      "bcrypt",
+      "systemd",
+      "Linux"
+    ],
+    "category": "built",
+    "status": "Open source",
+    "github": "https://github.com/ayaanngandhi/tablinum",
+    "openSource": true
   }
 ]
